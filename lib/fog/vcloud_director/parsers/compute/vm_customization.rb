@@ -34,6 +34,10 @@ module Fog
               @response[:admin_password] = value
             when 'AdminPasswordEnabled'
               @response[:admin_password_enabled] = (value == "true")
+            when 'AdminAutoLogonCount'
+              @response[:admin_auto_logon_count] = value
+            when 'AdminAutoLogonEnabled'
+              @response[:admin_auto_logon_enabled] = (value == "true")
             when 'AdminPasswordAuto'
               @response[:admin_password_auto] = (value == "true")
             when 'ResetPasswordRequired'

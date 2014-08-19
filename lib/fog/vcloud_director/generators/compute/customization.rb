@@ -1,3 +1,4 @@
+require 'pry'
 module Fog
   module Generators
     module Compute
@@ -82,6 +83,8 @@ module Fog
               <ovf:Info>Specifies Guest OS Customization Settings</ovf:Info>
               <Enabled>#{opts[:enabled]}</Enabled>
               <ChangeSid>#{opts[:change_sid]}</ChangeSid>
+              <AdminAutoLogonCount>#{opts[:admin_auto_logon_count]}</AdminAutoLogonCount>
+              <AdminAutoLogonEnabled>#{opts[:admin_auto_logon_enabled]}</AdminAutoLogonEnabled>
               <VirtualMachineId>#{opts[:virtual_machine_id]}</VirtualMachineId>
               <JoinDomainEnabled>#{opts[:join_domain_enabled]}</JoinDomainEnabled>
               <UseOrgSettings>#{opts[:use_org_settings]}</UseOrgSettings>

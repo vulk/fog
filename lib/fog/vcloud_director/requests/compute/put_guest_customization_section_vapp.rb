@@ -65,8 +65,11 @@ module Fog
             :admin_password => :AdminPassword,
             :admin_password_enabled => :AdminPasswordEnabled,
             :admin_password_auto => :AdminPasswordAuto,
+            :admin_password_auto => :AdminPasswordAuto,
             :reset_password_required => :ResetPasswordRequired,
             :customization_script => :CustomizationScript,
+            :admin_auto_logon_count => :AdminAutoLogonCount,
+            :admin_auto_logon_enabled => :AdminAutoLogonEnabled,
             :computer_name => :ComputerName
           }
           deprecated.each do |from, to|
@@ -122,9 +125,18 @@ module Fog
               if options.key?(:ComputerName)
                 ComputerName options[:ComputerName]
               end
+              # The API is sending these values, but we can't seem to
+              # send them.
+              # if options.key?(:AdminAutoLogonEnabled)
+              #   AdminAutoLogonEnabled options[:AdminAutoLogonEnabled]
+              # end
+              # if options.key?(:AdminAutoLogonCount)
+              #   AdminAutoLogonCount options[:AdminAutoLogonCount]
+              # end
             }
           end.to_xml
-
+          # require 'pry'
+          # binding.pry
           request(
             :body    => body,
             :expects => 202,

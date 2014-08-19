@@ -19,6 +19,8 @@ module Fog
         attribute :virtual_machine_id
         attribute :computer_name
         attribute :has_customization_script
+        attribute :admin_auto_logon_count
+        attribute :admin_auto_logon_enabled
 
         # bug: for some reason if the customization_script has /r, is showed
         # here as /n. Looks likes is something in excon
